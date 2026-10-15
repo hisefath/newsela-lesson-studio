@@ -9,7 +9,16 @@ Weight: ●●● critical (hard to undo, or touches money, personal data or sig
 
 ## By topic
 
-- none yet
+### Product (2)
+
+- ●●○ D4 — M4 tracer bullet, M5 AI assist and co-editing.
+- ●●○ D5 — SC-001 ≤ 60 min per lesson, aspirational until baseline.
+
+### Process (3)
+
+- ●○○ D1 — Partner docs kept local and gitignored until cleared.
+- ●○○ D2 — make check guards npm steps on package.json.
+- ●○○ D3 — Parallel research agents, fragments merged into one sources log.
 
 ## How the workflow improved
 
@@ -19,4 +28,10 @@ Decisions that adopted a software-factory-kit change (H) and the finding (F) beh
 
 ## By day
 
-- none yet
+### 2026-10-14
+
+- D5 · Product · ●●○ — SC-001 ≤ 60 min per lesson, aspirational until baseline.
+- D4 · Product · ●●○ — M4 tracer bullet, M5 AI assist and co-editing.
+- D3 · Process · ●○○ — Parallel research agents, fragments merged into one sources log.
+- D2 · Process · ●○○ — make check guards npm steps on package.json.
+- D1 · Process · ●○○ — Partner docs kept local and gitignored until cleared.

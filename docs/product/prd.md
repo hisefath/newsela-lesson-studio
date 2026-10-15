@@ -4,7 +4,7 @@
 |---|---|
 | Source brief | `specs/M1-lesson-generation-review/brief.md` @ 3785712 |
 | Track | Full |
-| Last updated | Wed Oct 14 23:40 CDT 2026 |
+| Last updated | Wed Oct 14 23:56:00 CDT 2026 |
 | Context names | Newsela |
 | Approval | G1 — recorded in `.handoff/TRACKER.md ## Approvals` (never in this file) |
 
@@ -63,7 +63,7 @@ No-gos:
 
 ## Appetite
 
-- Time box: 1–2 days of build after design (REQ-14); hard date: ⚠ What is the submission deadline and timezone? — Recommended: two days from the start of M4 build, in US Central time — Blocks: C-6. Source: REQ-14.
+- Time box: 1–2 days of build after design (REQ-14); hard date: none set on the portal; two days of build from the start of M4, US Central time. Source: REQ-14, D11.
 - If time runs short, cut in this order: US-7 → US-6 → US-5 → US-4. Never cut: US-1, US-2, US-3 and the [Unwanted] FRs of those stories.
 
 ## User stories
@@ -74,7 +74,7 @@ As Dev, the instructional designer, I want to upload a unit outline and get ever
 
 - Why this priority: without drafts there is nothing to review; this is the market-entry bottleneck.
 - Independent test: upload the sample G6 outline, confirm the preview, and watch lessons move from Queued to Draft ready; open one and see all sections.
-- Requirements: FR-001, FR-002, FR-003, FR-004, FR-005, FR-006, FR-007, FR-008, FR-009, FR-010, FR-032, FR-033 · Examples: AE-001–AE-010, AE-030, AE-033, AE-034
+- Requirements: FR-001, FR-002, FR-003, FR-004, FR-005, FR-006, FR-007, FR-008, FR-009, FR-010, FR-032, FR-033, FR-034 · Examples: AE-001–AE-010, AE-030, AE-033, AE-034, AE-035
 
 ### US-2 Review and edit a drafted lesson (P1)
 
@@ -134,6 +134,7 @@ As Rosa, I want a short quality checklist at approval time, so that every review
 - **FR-006** [Unwanted] (US-1) If a draft's segment minutes do not add up to the lesson's stated minutes, then the system shall mark the draft as failing the pacing check.
 - **FR-007** [Unwanted] (US-1) If a draft cites a standard code that is not in the stored California standards list, then the system shall mark that code as unknown on the lesson.
 - **FR-008** [Ubiquitous] (US-1) The system shall show the official text of every standard code shown on a lesson.
+- **FR-034** [Event] (US-1) When the evaluation run is started, the system shall report for each sampled lesson type how its draft compares with a published partner lesson of the same type on section coverage, pacing and standards coverage.
 - **FR-033** [Event] (US-1) When an outline or draft writes a standard code in a different spelling of an official code (for example W.6.2.c for W.6.2c), the system shall show the official spelling beside the code as written.
 - **FR-009** [Unwanted] (US-1) If drafting one lesson fails, then the system shall mark only that lesson Failed and offer a retry.
 - **FR-010** [Unwanted] (US-1) If a draft contains a quoted passage longer than 50 words, then the system shall flag that passage for the reviewer.
@@ -163,12 +164,12 @@ As Rosa, I want a short quality checklist at approval time, so that every review
 ## Non-functional requirements
 
 - **NFR-001** [Performance] One lesson is drafted within 5 minutes at the 95th percentile after it starts generating. Source: REQ-08.
-- **NFR-002** [Capacity] A 41-lesson unit is fully drafted within 60 minutes of confirming the outline. Source: ⚠ Is one hour acceptable for a whole unit to be drafted? — Recommended: 60 minutes — Blocks: NFR-002.
+- **NFR-002** [Capacity] A 41-lesson unit is fully drafted within 60 minutes of confirming the outline. Source: D12.
 - **NFR-003** [Performance] A lesson opens ready to edit in ≤ 2 s at the 95th percentile with 25 reviewers active. Source: REQ-09 (20+ reviewers) and R05.
 - **NFR-004** [Performance] An edit appears in a colleague's open copy of the lesson within 1 s at the 95th percentile with 5 reviewers in one lesson. Source: REQ-09, R05.
 - **NFR-005** [Reliability] 100 % of accepted edits survive a reload, a dropped connection or a restart. Source: REQ-04.
 - **NFR-006** [Auditability] 100 % of lesson status changes are traceable to a person and time. Source: REQ-06.
-- **NFR-007** [Cost] AI spend per drafted lesson is ≤ $0.50 at list prices. Source: ⚠ What spend cap per lesson and in total is acceptable? — Recommended: $0.50 per lesson, $30 total during the build — Blocks: NFR-007.
+- **NFR-007** [Cost] AI spend per drafted lesson is ≤ $0.50 at list prices. Source: D6 ($30 total during the build).
 - **NFR-008** [Accessibility] The unit page, lesson editor and approval steps meet WCAG 2.2 AA. Source: REQ-13 (usable, navigable workflow); assumed level, see A-5.
 - **NFR-009** [Capacity] One program of 480 lessons (4 units × 40 lessons × 3 grades) with 25 users is handled without changing the above numbers. Source: REQ-09, R05.
 
@@ -176,7 +177,7 @@ As Rosa, I want a short quality checklist at approval time, so that every review
 
 - **SC-001** North Star: median reviewer working time per lesson from "Draft ready" to "Approved". Target ≤ 60 minutes (aspirational), grounded in a reviewer reading one 50-minute lesson end to end plus fixes, because no public per-lesson baseline exists (R06) — the first demo unit sets the real baseline; lagging; if bad we fix the drafting of the sections reviewers rewrite most, or the editing aids; measured by status-change times and active editing time per lesson; reviewed by the content lead every week of a program build. (GOAL-1)
 - **SC-002** Supporting (explains SC-001): share of lessons approved with light edits (under 20 % of the draft's words changed). Target ≥ 60 % (aspirational), grounded in the brief's aim to "supplant the manual lesson writing step" (REQ-01) — if most drafts need heavy rewriting, drafting has not replaced writing; leading; if bad we fix drafting for the lesson types with the heaviest edits; measured by comparing each approved lesson with its first draft. (GOAL-1)
-- **SC-003** Supporting (explains SC-001): share of drafts that pass the structure, pacing and standards checks on the first attempt. Target ≥ 90 % (hard gate for the demo unit), grounded in decode T-1 and T-2 — a failing draft costs a reviewer a regeneration before any review; leading; if bad we fix the drafting instructions for the failing check; measured by check results at drafting time. (GOAL-2)
+- **SC-003** Supporting (explains SC-001): share of drafts that pass the structure, pacing and standards checks on the first attempt. Target ≥ 90 % (hard gate for the demo unit), grounded in decode T-1 and T-2 — a failing draft costs a reviewer a regeneration before any review; leading; if bad we fix the drafting instructions for the failing check; measured by check results at drafting time and by the evaluation run against published partner lessons (FR-034, decode QB-4/T-12). (GOAL-2)
 - **SC-004** Supporting (guards SC-001): share of approved lessons reopened for a content problem. Target ≤ 5 % (hard gate), grounded in the brief's "rigorous approval process" — approvals rushed to look good would reopen later, which means SC-001 was gamed; lagging; if bad we tighten the approval checklist (US-7); measured by reopen events per approved lesson. (GOAL-3)
 
 Rejected as vanity: lessons generated (counts output, not usable lessons); tokens used (cost context only, kept in NFR-007); editor sessions opened (activity, not progress).
@@ -214,6 +215,7 @@ Rejected as vanity: lessons generated (counts output, not usable lessons); token
 - **AE-029** (FR-031) Given a visitor who is not signed in, When they open a lesson link, Then the sign-in page shows and no lesson text is visible.
 - **AE-033** (FR-033) Given the sample outline's Lesson 11 lists W.6.2.c, When Dev views the preview, Then the code shows with "official: W.6.2c" beside it.
 - **AE-034** (FR-007) Given the sample outline's Lesson 22 lists RL.6.9.a, which has no official substandard, When its draft is checked, Then RL.6.9.a is marked unknown.
+- **AE-035** (FR-034) Given three published partner lessons (one Spark, one Reading, one Writing) held out as references, When the evaluation run is started, Then a report lists each type with its section coverage, pacing result and standards coverage, and the overall pass share.
 - **AE-030** (FR-032) Given the unit already has 41 lessons, When Dev uploads the same outline again, Then the system asks "Add only new lesson numbers?" and nothing changes until Dev answers.
 - **AE-031** (FR-029) Given Lesson 4 is a Core Reading lesson, When Rosa clicks Approve, Then a checklist for reading lessons appears.
 - **AE-032** (FR-030) Given the checklist with one item unticked, When Rosa confirms approval, Then Lesson 4 stays In review and the unticked item is highlighted.
@@ -232,15 +234,15 @@ Rejected as vanity: lessons generated (counts output, not usable lessons); token
 ## Assumptions and open questions
 
 Assumptions:
-- **A-1** Generation covers only numbered lessons; flex days, assessments and research lessons are not drafted (NG-3). — Basis: assumed by agent; confirm at G1.
-- **A-2** Any signed-in reviewer may approve; there is no separate approver role. — Basis: assumed by agent; confirm at G1.
-- **A-3** Drafts include Integrated ELD supports and Additional Student Support, because the outline names designated ELD standards per lesson and every published lesson has them (R02 F5, F6), even though Program Type 1 requires alignment to the ELA standards only (R01). — Basis: assumed by agent; confirm at G1.
-- **A-4** Reviewers own their copy of the anchor text; lessons reference it by chapter and page (R02 I3, R07). — Basis: assumed by agent; confirm at G1.
-- **A-5** WCAG 2.2 AA is the accessibility bar for staff screens. — Basis: assumed by agent; confirm at G1.
-- **A-6** Staff sign-in for the demo uses seeded fictional staff accounts; connecting the partner's real staff sign-in is out of scope. — Basis: assumed by agent; confirm at G1.
+- **A-1** Generation covers only numbered lessons; flex days, assessments and research lessons are not drafted (NG-3). — Basis: confirmed by the human at GI (D8 for A-2, D10 for A-1 and A-3).
+- **A-2** Any signed-in reviewer may approve; there is no separate approver role. — Basis: confirmed by the human at GI (D8 for A-2, D10 for A-1 and A-3).
+- **A-3** Drafts include Integrated ELD supports and Additional Student Support, because the outline names designated ELD standards per lesson and every published lesson has them (R02 F5, F6), even though Program Type 1 requires alignment to the ELA standards only (R01). — Basis: confirmed by the human at GI (D8 for A-2, D10 for A-1 and A-3).
+- **A-4** Reviewers own their copy of the anchor text; lessons reference it by chapter and page (R02 I3, R07). — Basis: confirmed by the human at GI (D8 for A-2, D10 for A-1 and A-3).
+- **A-5** WCAG 2.2 AA is the accessibility bar for staff screens. — Basis: confirmed by the human at GI (D8 for A-2, D10 for A-1 and A-3).
+- **A-6** Staff sign-in for the demo uses seeded fictional staff accounts; connecting the partner's real staff sign-in is out of scope. — Basis: confirmed by the human at GI (D8 for A-2, D10 for A-1 and A-3).
 
 Open questions:
-- ⚠ Which lesson types must be drafted in the first build milestone? — Recommended: all numbered types in the sample outline (Spark, Core Reading, Core Writing, Academic Discussion, Showcase Writing) — Blocks: FR-005, M4
+- None open. Lesson types to draft: every numbered type in the outline (Spark, Core Reading, Core Writing, Academic Discussion, Showcase Writing), per D10.
 
 ### Interview log
 
@@ -267,7 +269,7 @@ Answered from sources: Problem → REQ-01, REQ-13, R04, R06 · Users → REQ-09,
 | M1 Research | Approved brief + cited research | none (docs only) | GI approval | Reviewer reads the brief and every R note |
 | M2 Product | Approved PRD (+ clarifications) | none (docs only) | GI approval | Reviewer reads docs/product/prd.md |
 | M3 Design | Approved HLD, LLD, data design, contract, diagrams | none (docs only) | GD approval | Reviewer can read every design doc from docs/README.md |
-| M4 Tracer bullet | Outline in → drafted lessons → edit → approve | FR-001, FR-002, FR-003, FR-004, FR-005, FR-006, FR-007, FR-008, FR-033, FR-009, FR-011, FR-012, FR-013, FR-014, FR-015, FR-016, FR-017, FR-018, FR-031 | AE-001–AE-009, AE-011–AE-018, AE-029, AE-033, AE-034, SC-003 | Dev uploads the sample outline, Rosa edits Lesson 4 and approves it, and the unit page shows it Approved |
+| M4 Tracer bullet | Outline in → drafted lessons → edit → approve | FR-001, FR-002, FR-003, FR-004, FR-005, FR-006, FR-007, FR-008, FR-033, FR-034, FR-009, FR-011, FR-012, FR-013, FR-014, FR-015, FR-016, FR-017, FR-018, FR-031 | AE-001–AE-009, AE-011–AE-018, AE-029, AE-033, AE-034, AE-035, SC-003 | Dev uploads the sample outline, Rosa edits Lesson 4 and approves it, and the unit page shows it Approved |
 | M5 Review power | AI assist, live co-editing, unit progress | FR-010, FR-019, FR-020, FR-021, FR-022, FR-023, FR-024, FR-025, FR-026, FR-027, FR-028, FR-032 | AE-010, AE-019–AE-028, AE-030, SC-001, SC-002 | Two reviewers co-edit Lesson 10, one rewrites a segment with the assistant, and Lena sees counts change |
 | Later | Not in this appetite | FR-029, FR-030 | AE-031, AE-032, SC-004 | — |
 
@@ -280,7 +282,9 @@ Answered from sources: Problem → REQ-01, REQ-13, R04, R06 · Users → REQ-09,
 | C-3 | AI generation and assistance use the OpenAI or Anthropic APIs | OpenAI, Anthropic | partner | REQ-11 (partner brief §Technology) |
 | C-4 | Hosting on any platform; the partner uses AWS and names Vercel or Railway as fine | AWS, Vercel, Railway | partner (choice left open) | REQ-11 (partner brief §Technology) |
 | C-5 | Deliver source code, technical documentation and a demo video; AI-usage documentation optional | none | partner | REQ-12, REQ-15 |
-| C-6 | Build time 1–2 days | none | partner | REQ-14 |
+| C-6 | Build time 1–2 days; two days chosen, US Central | none | partner, human | REQ-14, D11 |
+| C-7 | AI provider is Anthropic; total AI spend during the build ≤ $30 | Anthropic | human | D6 |
+| C-8 | Partner material is paraphrased in the repo, never committed verbatim | none | human | D7 |
 
 ### Assignment trace
 
@@ -295,7 +299,7 @@ Answered from sources: Problem → REQ-01, REQ-13, R04, R06 · Users → REQ-09,
 | REQ-07 | Newsela lesson format | FR-005, R02 |
 | REQ-08 | Async generation, minutes per lesson fine | FR-004, NFR-001 |
 | REQ-09 | Performant for 20+ reviewers | NFR-003, NFR-004, NFR-009 |
-| REQ-11 | Mandated languages, editor, AI providers | C-1, C-2, C-3, C-4 |
+| REQ-11 | Mandated languages, editor, AI providers | C-1, C-2, C-3, C-4, C-7 |
 | REQ-12 | Code, docs, demo video | C-5 |
 | REQ-13 | Easy workflow, staff productivity | SC-001, US-6, NFR-008 |
 | REQ-14 | 1–2 days | C-6, Appetite |
@@ -306,6 +310,7 @@ Answered from sources: Problem → REQ-01, REQ-13, R04, R06 · Users → REQ-09,
 | Date | Change | Ids affected | Gate |
 |---|---|---|---|
 | Wed Oct 14 23:40 CDT 2026 | First draft | all | G1 (folded into GI) |
+| Wed Oct 14 23:56:00 CDT 2026 | GI answers applied: open questions closed (D6, D10–D12); A-1–A-6 confirmed; FR-034 + AE-035 evaluation against published partner lessons (decode QB-4/T-12, D14) | FR-034, AE-035, NFR-002, NFR-007, SC-003, C-6–C-8, A-1–A-6 | GI |
 
 ## Clarifications
 

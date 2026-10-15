@@ -76,3 +76,84 @@ Copy this block for each new entry (D-ids increase by one, starting at D1):
 - Cost accepted: the target may move after the first unit. · Reversibility: Type 2 · Confidence: low
 - Revisit if: the partner shares freelance review times. · Evidence: R06, prd.md SC-001 · Interview line: "We measure our own baseline because nobody publishes one."
 - Review: Topic Product · Weight ●●○ · One-liner: SC-001 ≤ 60 min per lesson, aspirational until baseline.
+
+### D6 AI provider Anthropic, $30 build cap  [status: accepted]
+- 2026-10-14 23:56 CDT · GI · M1–M2 · Decided by: human (GI "Yes, add QB-4/T-12 (eval against Newsela's published lessons). My GI answers: 1 default 2A 3A 4A 5 default 6 default 7A 8A, assumptions confirmed") · Proposed by: plan-product (claude-code, claude-opus-5-5) · .handoff/checkpoints/GI-M1.md@fb28ae0
+- Context and forces: NFR-007, C-3; partner allows OpenAI or Anthropic (REQ-11)
+- Options: Do nothing (no generation) — rejected: demo cannot run · A Anthropic, $30 cap (agent's recommendation; agent's first proposal — no instead-of recorded) — chosen · B OpenAI, same cap — rejected: partner uses Claude Code; no extra benefit shown
+- Choice · Why: in context of a partner that allows either provider, facing a spend limit, we chose Anthropic with a $30 cap over OpenAI to match the partner's own tooling, accepting single-vendor dependence for the build.
+- Cost accepted: vendor lock for prompts; a cap may stop iteration. · Reversibility: Type 1 · Confidence: med
+- Revisit if: the cap is hit before the demo unit is drafted. · Evidence: GI card §2 · Interview line: "We matched the partner's tooling and capped spend before writing a prompt."
+- Review: Topic Infrastructure · Weight ●●● · One-liner: Anthropic for drafting and assist; $30 total, ≤ $0.50 per lesson.
+
+### D7 Partner material stays private and paraphrased  [status: accepted]
+- 2026-10-14 23:56 CDT · GI · M1–M2 · Decided by: human (GI "Yes, add QB-4/T-12 (eval against Newsela's published lessons). My GI answers: 1 default 2A 3A 4A 5 default 6 default 7A 8A, assumptions confirmed") · Proposed by: plan-product (claude-code, claude-opus-5-5) · .handoff/checkpoints/GI-M1.md@fb28ae0
+- Context and forces: U-01, C-8
+- Options: Do nothing / commit it (shown as "B commit it") — rejected: one-way leak in a public repo · A keep private, paraphrase (agent's recommendation; agent's first proposal — no instead-of recorded) — chosen
+- Choice · Why: in context of a public repo, facing uncleared partner documents, we chose to keep them private over committing them to protect the partner, accepting that clones lack the sources.
+- Cost accepted: a fresh clone must re-fetch sources. · Reversibility: Type 1 · Confidence: med
+- Revisit if: the partner clears the material. · Evidence: GI card §3, D1 · Interview line: "Their material stays theirs; the repo only paraphrases it."
+- Review: Topic Process · Weight ●●○ · One-liner: Partner docs never committed; repo paraphrases them (confirms D1).
+
+### D8 Any signed-in reviewer may approve  [status: accepted]
+- 2026-10-14 23:56 CDT · GI · M1–M2 · Decided by: human (GI "Yes, add QB-4/T-12 (eval against Newsela's published lessons). My GI answers: 1 default 2A 3A 4A 5 default 6 default 7A 8A, assumptions confirmed") · Proposed by: plan-product (claude-code, claude-opus-5-5) · .handoff/checkpoints/GI-M1.md@fb28ae0
+- Context and forces: FR-014, FR-031, A-2
+- Options: Do nothing — rejected: approval cannot be trusted · A any signed-in reviewer approves (agent's recommendation; agent's first proposal — no instead-of recorded) — chosen · B separate approver role — rejected: extra role and setup for no brief requirement · C two-person approval — rejected: slows SC-001
+- Choice · Why: in context of the brief's "review staff … approve", facing a 2-day build, we chose single-reviewer approval with an audit trail over role or two-person schemes to keep review fast, accepting no segregation of duties.
+- Cost accepted: a careless approval is caught only by history and reopen (SC-004). · Reversibility: Type 1 · Confidence: med
+- Revisit if: SC-004 reopen share exceeds 5 %. · Evidence: GI card §4, prd.md A-2 · Interview line: "Anyone on the review staff can approve, and every approval is on the record."
+- Review: Topic Security · Weight ●●● · One-liner: No separate approver role; history records who approved.
+
+### D9 Public GitLab repo with GitHub mirror  [status: accepted]
+- 2026-10-14 23:56 CDT · GI · M1–M2 · Decided by: human (GI "Yes, add QB-4/T-12 (eval against Newsela's published lessons). My GI answers: 1 default 2A 3A 4A 5 default 6 default 7A 8A, assumptions confirmed") · Proposed by: plan-product (claude-code, claude-opus-5-5) · .handoff/checkpoints/GI-M1.md@fb28ae0
+- Context and forces: REQ-12, U-03
+- Options: Do nothing (no remote) — rejected: no CI, no MR, nothing to submit · A public (agent's recommendation; agent's first proposal — no instead-of recorded) — chosen · B private until submission — rejected: kickoff recipe is public
+- Choice · Why: in context of the standing kickoff recipe, facing a graded submission, we chose a public repo over private-until-submission so reviewers can see the work, accepting that every commit is public.
+- Cost accepted: every commit is public, so partner material must never be committed (D7). · Reversibility: Type 1 · Confidence: med
+- Revisit if: the partner asks for privacy. · Evidence: GI card §7, memory partner-project-kickoff · Interview line: "The work is public from day one, so the partner can watch it grow."
+- Review: Topic Infrastructure · Weight ●●○ · One-liner: Public repo on labs.gauntletai.com, mirrored to GitHub.
+
+### D10 Draft every numbered lesson type, with ELD supports  [status: accepted]
+- 2026-10-14 23:56 CDT · GI · M1–M2 · Decided by: human (GI "Yes, add QB-4/T-12 (eval against Newsela's published lessons). My GI answers: 1 default 2A 3A 4A 5 default 6 default 7A 8A, assumptions confirmed") · Proposed by: plan-product (claude-code, claude-opus-5-5) · .handoff/checkpoints/GI-M1.md@fb28ae0
+- Context and forces: FR-005, A-1, A-3, NG-3
+- Options: Do nothing — rejected: no scope · as recommended (agent's recommendation; agent's first proposal — no instead-of recorded) — chosen
+- Choice · Why: in context of an outline with numbered lessons and flex rows, facing a short build, we chose every numbered type with ELD supports over a subset to match published lessons, accepting more prompt work.
+- Cost accepted: more prompt variants. · Reversibility: Type 2 · Confidence: med
+- Revisit if: drafts for one type keep failing checks. · Evidence: GI card §5, R02 · Interview line: "We draft every real lesson the outline numbers, the way their published lessons look."
+- Review: Topic Product · Weight ●●○ · One-liner: Spark, Reading, Writing, Discussion, Showcase drafted; flex and assessments skipped.
+
+### D11 Two-day build, US Central, no portal deadline  [status: accepted]
+- 2026-10-14 23:56 CDT · GI · M1–M2 · Decided by: human (GI "Yes, add QB-4/T-12 (eval against Newsela's published lessons). My GI answers: 1 default 2A 3A 4A 5 default 6 default 7A 8A, assumptions confirmed") · Proposed by: plan-product (claude-code, claude-opus-5-5) · .handoff/checkpoints/GI-M1.md@fb28ae0
+- Context and forces: C-6, REQ-14
+- Options: Do nothing — rejected: no timebox · default (agent's recommendation; agent's first proposal — no instead-of recorded) — chosen
+- Choice · Why: in context of a 1–2 day brief with no submission date, facing scope pressure, we chose a two-day box to cut scope rather than slip, accepting the cut order.
+- Cost accepted: US-4–US-7 may be cut. · Reversibility: Type 2 · Confidence: med
+- Revisit if: the portal shows a deadline. · Evidence: GI card §1 · Interview line: "Two days, then we cut scope, never extend."
+- Review: Topic Process · Weight ●○○ · One-liner: Appetite two days from the start of M4.
+
+### D12 Whole unit drafted within 60 minutes  [status: accepted]
+- 2026-10-14 23:56 CDT · GI · M1–M2 · Decided by: human (GI "Yes, add QB-4/T-12 (eval against Newsela's published lessons). My GI answers: 1 default 2A 3A 4A 5 default 6 default 7A 8A, assumptions confirmed") · Proposed by: plan-product (claude-code, claude-opus-5-5) · .handoff/checkpoints/GI-M1.md@fb28ae0
+- Context and forces: NFR-002, R05
+- Options: Do nothing — rejected: no target · 60 minutes (agent's recommendation; agent's first proposal — no instead-of recorded) — chosen
+- Choice · Why: in context of a few minutes per lesson, facing 41 lessons, we chose 60 minutes per unit to force parallel drafting, accepting provider rate limits as the risk.
+- Cost accepted: parallel drafting needed. · Reversibility: Type 2 · Confidence: med
+- Revisit if: rate limits make it unreachable. · Evidence: GI card §6, R05 I6 · Interview line: "A unit drafts over lunch, not overnight."
+- Review: Topic Product · Weight ●○○ · One-liner: NFR-002 target 60 minutes per 41-lesson unit.
+
+### D13 Draft the partner email for the human to send  [status: accepted]
+- 2026-10-14 23:56 CDT · GI · M1–M2 · Decided by: human (GI "Yes, add QB-4/T-12 (eval against Newsela's published lessons). My GI answers: 1 default 2A 3A 4A 5 default 6 default 7A 8A, assumptions confirmed") · Proposed by: plan-product (claude-code, claude-opus-5-5) · .handoff/checkpoints/GI-M1.md@fb28ae0
+- Context and forces: U-06
+- Options: Do nothing — rejected: open questions stay guesses · A draft it (agent's recommendation; agent's first proposal — no instead-of recorded) — chosen
+- Choice · Why: in context of open partner-only questions, facing a short build, we chose a drafted email over guessing, accepting a reply may come late.
+- Cost accepted: none. · Reversibility: Type 2 · Confidence: med
+- Revisit if: no reply before M4. · Evidence: GI card §8 · Interview line: "We asked the partner the questions only they can answer."
+- Review: Topic Process · Weight ●○○ · One-liner: Three clarifying questions drafted; the human sends.
+
+### D14 Evaluate drafts against published partner lessons  [status: accepted]
+- 2026-10-14 23:56 CDT · GI · M1–M2 · Decided by: human (GI "Yes, add QB-4/T-12 (eval against Newsela's published lessons). My GI answers: 1 default 2A 3A 4A 5 default 6 default 7A 8A, assumptions confirmed") · Proposed by: plan-product (claude-code, claude-opus-5-5) · .handoff/checkpoints/GI-M1.md@fb28ae0
+- Context and forces: decode QB-4, T-12, FR-034, SC-003
+- Options: Do nothing — rejected: "drafts are good" stays a claim · add QB-4/T-12 and an evaluation run (agent's recommendation, raised after the GI card; agent's first proposal — no instead-of recorded) — chosen
+- Choice · Why: in context of human-written lessons on the partner's review site, facing an unproven quality claim, we chose a measured comparison against those lessons over self-checks alone, accepting extra build work in M4.
+- Cost accepted: M4 grows by one FR. · Reversibility: Type 2 · Confidence: med
+- Revisit if: published lessons cannot be used as references. · Evidence: human GI reply, R02 · Interview line: "We grade our drafts against the lessons their own team wrote."
+- Review: Topic Product · Weight ●●● · One-liner: FR-034: drafts scored against held-out published lessons by type.

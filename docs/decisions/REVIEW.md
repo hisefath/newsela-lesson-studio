@@ -9,16 +9,31 @@ Weight: ●●● critical (hard to undo, or touches money, personal data or sig
 
 ## By topic
 
-### Product (2)
+### Product (5)
 
+- ●●● D14 — FR-034: drafts scored against held-out published lessons by type.
 - ●●○ D4 — M4 tracer bullet, M5 AI assist and co-editing.
 - ●●○ D5 — SC-001 ≤ 60 min per lesson, aspirational until baseline.
+- ●●○ D10 — Spark, Reading, Writing, Discussion, Showcase drafted; flex and assessments skipped.
+- ●○○ D12 — NFR-002 target 60 minutes per 41-lesson unit.
 
-### Process (3)
+### Security (1)
 
+- ●●● D8 — No separate approver role; history records who approved.
+
+### Infrastructure (2)
+
+- ●●● D6 — Anthropic for drafting and assist; $30 total, ≤ $0.50 per lesson.
+- ●●○ D9 — Public repo on labs.gauntletai.com, mirrored to GitHub.
+
+### Process (6)
+
+- ●●○ D7 — Partner docs never committed; repo paraphrases them (confirms D1).
 - ●○○ D1 — Partner docs kept local and gitignored until cleared.
 - ●○○ D2 — make check guards npm steps on package.json.
 - ●○○ D3 — Parallel research agents, fragments merged into one sources log.
+- ●○○ D11 — Appetite two days from the start of M4.
+- ●○○ D13 — Three clarifying questions drafted; the human sends.
 
 ## How the workflow improved
 
@@ -30,6 +45,15 @@ Decisions that adopted a software-factory-kit change (H) and the finding (F) beh
 
 ### 2026-10-14
 
+- D14 · Product · ●●● — FR-034: drafts scored against held-out published lessons by type.
+- D13 · Process · ●○○ — Three clarifying questions drafted; the human sends.
+- D12 · Product · ●○○ — NFR-002 target 60 minutes per 41-lesson unit.
+- D11 · Process · ●○○ — Appetite two days from the start of M4.
+- D10 · Product · ●●○ — Spark, Reading, Writing, Discussion, Showcase drafted; flex and assessments skipped.
+- D9 · Infrastructure · ●●○ — Public repo on labs.gauntletai.com, mirrored to GitHub.
+- D8 · Security · ●●● — No separate approver role; history records who approved.
+- D7 · Process · ●●○ — Partner docs never committed; repo paraphrases them (confirms D1).
+- D6 · Infrastructure · ●●● — Anthropic for drafting and assist; $30 total, ≤ $0.50 per lesson.
 - D5 · Product · ●●○ — SC-001 ≤ 60 min per lesson, aspirational until baseline.
 - D4 · Product · ●●○ — M4 tracer bullet, M5 AI assist and co-editing.
 - D3 · Process · ●○○ — Parallel research agents, fragments merged into one sources log.

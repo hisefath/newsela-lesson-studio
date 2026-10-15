@@ -38,6 +38,8 @@ to the CA ELA/ELD standards it names, stores the lessons, and gives internal rev
 | QB-2 | Generation quality you can trust at program scale: lessons that match Newsela's real lesson anatomy and cite only real standards, so reviewers fix pedagogy, not structure or hallucinations | Brief links a concrete example lesson and a real outline; "aligned to teach the CA Core ELA/ELD standards numbers indicated"; a program is ~160 lessons per grade, so review time per lesson is the cost driver | high |
 | QB-3 | Engineering maturity on the partner's mandated editor toolkit: real multi-reviewer collaboration plus an approval state that cannot be bypassed, built cleanly in 1–2 days | a collaborative-editor toolkit is named as a requirement; "20+ reviewers"; "clean, well structured architecture"; partner uses Claude Code/Codex, so AI-assisted speed is expected | med |
 
+| QB-4 | Can AI drafts match the lessons Newsela's own staff already wrote? Their CA review site holds human-written lessons for the 2026 state submission, so the hidden test is measured generation quality against that gold standard, not "it generates" (added at GI, human-approved) | Example lesson link points at the live state-review course; R02 found 45 published lessons in G6 Unit 1 alone; R04: content frozen and revised about every two years | med |
+
 **Recommended framing for the brief:** Build the review desk Newsela's curriculum staff would actually use: an outline
 goes in, structured, standards-true lessons come out in the background, and reviewers edit together and approve with
 an audit trail — judged by how fast a reviewer gets a lesson from generated to approved.
@@ -64,9 +66,11 @@ an audit trail — judged by how fast a reviewer gets a lesson from generated to
 | T-10 | Deliverable gaps | Code feels like the deliverable | Missing demo video or tech docs | REQ-12 | REQ rows mapped to write-demo-script/record-demo and garden-docs; U rows for recording and portal submission |
 | T-11 | Uncapped AI spend | Generating 41 rich lessons repeatedly while iterating | Real money; partner sees no cost awareness | ~41 lessons × long outputs × retries | ⚠ spend cap at GI; NFR on cost per lesson; generation of one lesson first, unit on demand |
 
+| T-12 | Shipping a generator with no evaluation against the partner's real lessons | Output looks plausible, so quality feels proven | "Drafts are good" stays a claim; no number for the interview; regressions go unseen when prompts change | Published human-written lessons exist on the partner's review site (R02) | write-prd FR for an evaluation report; design-hld picks how published lessons serve as worked examples and as a held-out test set; define-acceptance runs it in make check where it can |
+
 Categories checked (each is a T row above or n/a with a reason): literal reading (T-1) · hidden grading criteria
 (T-8, interview in QB list) · unstated non-functional bar (T-5, T-7, T-11) · wrong stack / partner mismatch (T-9) ·
-demo vs depth (T-6) · deliverable gaps (T-10) · scope creep (T-6) · unverifiable success (T-8) · domain landmines
+demo vs depth (T-6) · deliverable gaps (T-10) · scope creep (T-6) · unverifiable success (T-8, T-12) · domain landmines
 (T-2, T-3; no student data is involved, staff-only tool) · copying v1 / prior work (T-9).
 
 ## Open questions

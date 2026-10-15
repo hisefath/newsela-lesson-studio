@@ -37,6 +37,8 @@ several harnesses read it and the repo is public.
 | 2026-10-14 23:38 CDT | auto-T2 | docs/research@639bdbe | standing rule: Type 2 proceeds (WORKFLOW §5) — D3 |
 | 2026-10-14 23:38 CDT | auto-T2 | docs/product/prd.md@7f56978 | standing rule: Type 2 proceeds (WORKFLOW §5) — D4 |
 | 2026-10-14 23:38 CDT | auto-T2 | docs/product/prd.md@7f56978 | standing rule: Type 2 proceeds (WORKFLOW §5) — D5 |
+| 2026-10-14 23:55 CDT | GI | .handoff/checkpoints/GI-M1.md@fb28ae0 (brief, research, prd.md@7f56978) | "Yes, add QB-4/T-12 (eval against Newsela's published lessons). My GI answers: 1 default 2A 3A 4A 5 default 6 default 7A 8A, assumptions confirmed" |
+| 2026-10-14 23:55 CDT | standing | merge rule (from the session-start message) | "Three sessions: /plan-product → Intent check (GI) → /plan-design → Design check (GD) → /build-milestone → Try-it check (GT) → merge on green." |
 
 ## Log
 

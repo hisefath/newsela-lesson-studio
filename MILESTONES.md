@@ -13,6 +13,6 @@ LLD); `slice-tasks` adds each implementation milestone's row at G4; the supervis
 
 | id | goal | tasks | D-ids | MR | status | gate SHAs | merge SHA | main-check SHA | tag |
 |---|---|---|---|---|---|---|---|---|---|
-| M1 | Research: brief + cited research (docs only) | — | — | — | planned | — | — | — | — |
-| M2 | Product: PRD + clarifications (docs only) | — | — | — | planned | — | — | — | — |
+| M1 | Research: brief + cited research (docs only) | — | D1–D3 | !1 | done | GI@546848f | 1b78820 | 1b78820 | — |
+| M2 | Product: PRD + clarifications (docs only; shipped with M1 in one /plan-product MR) | — | D4–D14 | !1 | done | GI@546848f | 1b78820 | 1b78820 | — |
 | M3 | Design: HLD, LLD, DB design, API contract, diagrams (docs only) | — | — | — | planned | — | — | — | — |

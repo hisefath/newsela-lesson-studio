@@ -7,11 +7,11 @@ several harnesses read it and the repo is public.
 ## Resume
 
 <!-- Rewritten as the LAST edit of every supervisor move. Times come from `date`. -->
-- **As of:** 2026-10-14 23:41 CDT
+- **As of:** 2026-10-15 00:05 CDT
 - **In flight:** none
-- **Next:** human answers the GI card (.handoff/checkpoints/GI-M1.md), then /plan-design
-- **Waiting on:** human (GI)
-- **Verified:** 7f56978 make check → OK; write-prd Done-when → all print nothing
+- **Next:** /plan-design (UX flows → HLD → LLD → diagrams → GD card)
+- **Waiting on:** human to type /plan-design; human may send docs/source/raw/partner-email-draft.md
+- **Verified:** 1b78820 make check on main → OK; MR !1 pipelines 54907/54908 success
 
 ## Tasks
 
@@ -48,3 +48,4 @@ several harnesses read it and the repo is public.
 2026-10-14 23:25 CDT ROUTE M1 harness=claude why=new product, Full track; /plan-product session
 2026-10-14 23:41 CDT ROUTE M1 harness=claude why=plan-product done; GI card sent
 2026-10-15 00:00 CDT NOTE M1 harness=claude why=rewrote unpushed history (filter-branch on R05 only) to drop the partner contact's name before the first public push; earlier SHAs map 639bdbe→e962277 7f56978→9b035bf fb28ae0→546848f 5019936→2eafc01 (content otherwise identical)
+2026-10-15 00:05 CDT VERIFY M1 harness=claude why=MR !1 merged on green (54908) under the standing merge-on-green rule; main make check OK

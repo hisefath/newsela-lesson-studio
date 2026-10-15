@@ -47,3 +47,4 @@ several harnesses read it and the repo is public.
      scripts/delegate.sh appends DISPATCH and RESULT lines itself. -->
 2026-10-14 23:25 CDT ROUTE M1 harness=claude why=new product, Full track; /plan-product session
 2026-10-14 23:41 CDT ROUTE M1 harness=claude why=plan-product done; GI card sent
+2026-10-15 00:00 CDT NOTE M1 harness=claude why=rewrote unpushed history (filter-branch on R05 only) to drop the partner contact's name before the first public push; earlier SHAs map 639bdbe→e962277 7f56978→9b035bf fb28ae0→546848f 5019936→2eafc01 (content otherwise identical)
